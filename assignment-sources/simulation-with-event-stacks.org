@@ -350,7 +350,7 @@ print(events[:5])  # this
 #+end_src
 
 #+begin_exercise
-Explain the  results of the `this' line.  Why is the content of column 5 negative?
+Explain the  results of the `this' line.  It may seem an error that the content of column 5 is  negative, but that is not the case. Why should this be negative /at this stage/ of the program?
 #+begin_hint
 Realize that we have not yet called ~gg1.run()~.
 #+end_hint
