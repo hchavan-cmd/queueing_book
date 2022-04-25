@@ -18,7 +18,8 @@ mv assignments.pdf ../
   )
 
 (defun export-all ()
-  (mapc 'export-to-latex '("queues-simulations-in-discrete-time.org"
+  (mapc 'export-to-latex '("intro.org"
+                           "queues-simulations-in-discrete-time.org"
                            "psychiatrists.org"
                            "queues-simulations-in-continuous-times.org"
                            "sakasegawa.org"

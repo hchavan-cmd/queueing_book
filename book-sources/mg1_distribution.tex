@@ -129,7 +129,7 @@ With this,
 \end{equation*}
 
 In simple cases we can carry out the integration by hand.
-A simple example is when $S\sim \Exp(\mu)$.\sidenote{~\cref{ex:74}} Another is to take $S\equiv s$, i.e., a constant.
+A simple example is when $S\sim \Exp{\mu}$.\sidenote{~\cref{ex:74}} Another is to take $S\equiv s$, i.e., a constant.
 In this case, all probability mass is concentrated on $s$, so that $\d F( x) = 0$ for $x\neq s$ but $\d F(s) = \infty$.\sidenote{The density is the, so-called, $\delta$ function concentrated on $s$.}
 With this, $f(j) = e^{-\lambda s}(\lambda s)^j/{j!}$.
 
@@ -206,7 +206,7 @@ Now we obtain $\py{round(approx_2[0], 7)}$, which is indeed correct.
 \end{exercise}
 
 \begin{exercise}\label{ex:46}
-Show that if $\L{D_{k-1}} = 0$ and $S_k \sim\Exp(\mu)$,  the density of $D_{k} - D_{k-1}$ is
+Show that if $\L{D_{k-1}} = 0$ and $S_k \sim\Exp{\mu}$,  the density of $D_{k} - D_{k-1}$ is
  \begin{equation*}
  f_{X+S}(t) = \frac{\lambda \mu}{\mu-\lambda} (e^{-\lambda t} - e^{-\mu t}).
  \end{equation*}
@@ -214,7 +214,7 @@ Show that if $\L{D_{k-1}} = 0$ and $S_k \sim\Exp(\mu)$,  the density of $D_{k} -
   Do~\cref{ex:17} first.
 \end{hint}
 \begin{solution}
-Since $X\sim \Exp(\lambda)$ and $S\sim\Exp(\mu)$, and $X$ and $S$ are independent, their joint density is $f_{X,S}(x,y) = \lambda \mu e^{-\lambda x - \mu y}$. With this,
+Since $X\sim \Exp{\lambda}$ and $S\sim\Exp{\mu}$, and $X$ and $S$ are independent, their joint density is $f_{X,S}(x,y) = \lambda \mu e^{-\lambda x - \mu y}$. With this,
  \begin{align*}
 \P{X+S\leq t }
 &= \lambda \mu \int_0^\infty \int_0^\infty e^{-\lambda x - \mu y} \1{x+y\leq t} \d x \d y \\
@@ -247,7 +247,7 @@ Conditioning is much faster:
 
 
 \begin{exercise}\label{ex:74}
- If $S\sim \Exp(\mu)$, show that
+ If $S\sim \Exp{\mu}$, show that
  \begin{equation*}
 f(j) = \P{Y_k = j} = \frac{\mu}{\lambda+\mu}\left(\frac{\lambda}{\lambda+\mu}\right)^j.
  \end{equation*}
@@ -268,7 +268,7 @@ Method 2. Consider the Poisson process with rate $\lambda+\mu$, and thin with pr
 \end{exercise}
 
 \begin{exercise}\label{ex:l-225}
- If $S\sim \Exp(\mu)$, show that
+ If $S\sim \Exp{\mu}$, show that
  \begin{equation*}
 G(j) = \sum_{k=j+1}^\infty f(k) = \left(\frac{\lambda}{\lambda+\mu}\right)^{j+1}.
  \end{equation*}

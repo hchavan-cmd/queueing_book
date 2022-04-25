@@ -100,9 +100,10 @@ Finally, for ease we write
 \begin{equation*}
 \rho := \frac{\lambda \E S} c.
 \end{equation*}
-When the system is stable, so that $\lambda=\delta$,   the utilization, load and $\rho$ are all equal, and we will use these interchangably. However,
-However, when jobs are rejected, or when customers leave the queue before being served, $\lambda > \delta$. In such case, care is required.
-Moreover, the utilization is necessarily at most 1, while the load per server $\lambda \E S /c$ can exceed one.
+
+When the system is stable (so that $\lambda=\delta$) the utilization, load and $\rho$ are all equal, and we will use these terms interchangably.
+However, when jobs are rejected, or when customers leave the queue before being served, the arrival rate $$\lambda$ is larger than the departure rate $\delta$, and then we have to be careful about the difference between load and utilization.
+Note that the load can exceed 1, while the utilization is necessarily at most.
 
 It is easy to check  with a simulation of the $G/G/1$ queue that $L(t)$ increases at rate $\lambda-\mu$ when $\lambda > \mu$, while $L(t) \approx L(0) + (\lambda - \mu)t$ when $\lambda< \mu$ and $L(0)$ large, until the system is empty.\sidenote{It turns out that, when $\E X = \E S$ but $\V{X-S} > 0$, the queue length process behaves in a very peculiar way.
   This is due to the fact that the symmetric random walk has some unexpected behavior, and~\cref{sec:queu-proc-as} shows that queueing systems and random walks are intimately related.}

@@ -38,11 +38,11 @@ Define the \emph{availability} as
 where $m_f$ is the mean time to fail. Since, $m_f = 1/\lambda_f$, it is easy to show\sidenote{\cref{ex:80}} that $A=(1+\lambda_f \E R)^{-1}$, from which we obtain
 \sidenote{\cref{ex:f-16}}
  $\E S = \E{S_0}/A$.
-With this, the utilization becomes
+With this, the load becomes
 \begin{equation*}
 \rho = \lambda \E S = \lambda \frac{\E{S_0}}A.
 \end{equation*}
-Since $A\in (0,1)$, the utilization increases due to failures.
+Since $A\in (0,1)$, the load increases due to failures.
 
 \newthought{With some work}, we obtain\sidenote{~\cref{ex:l-159}--\cref{ex:83}} from~\cref{eq:f1},
  \begin{align}\label{eq:f2}
@@ -97,7 +97,7 @@ EW + ES  # = EJ
 \end{hint}
 \begin{solution}
   The time to fail is the time in between two interruptions.
-  By assumption, the failure times are $\Exp(\lambda_f)$, hence $m_f = 1/\lambda_f$.
+  By assumption, the failure times are $\Exp{\lambda_f}$, hence $m_f = 1/\lambda_f$.
   The expected duration of an interruption is $\E R$.   With this
 \begin{equation*}
  A=\frac{m_f}{m_f + \E R}=\frac{1/\lambda_f }{1/\lambda_f + \E R}.

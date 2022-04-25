@@ -49,7 +49,7 @@ Then, using~\cref{eq:61}, it follows right away  that
  \begin{equation*}
 p(n) = \frac{1-\rho}{1-\rho^{K+1}} \rho^n, \quad \rho = \frac{\lambda}{\mu}.
 \end{equation*}
-Obseve that, since jobs are blocked, the utilization is no longer equal to the load. The utilization is now $\lambda p(K)/\mu \neq \lambda /\mu = \rho$. Note further that, contrary to the $M/M/1$ case,
+Obseve that, since jobs are blocked, the utilization is no longer equal to the load; the utilization is now $\lambda p(K)/\mu \neq \lambda /\mu = \rho$. Note further that, contrary to the $M/M/1$ case,
 \begin{equation*}
 \E\Ls = \sum_{n=0}^K \min\{n, 1\} p(n) = 1-p(0) \neq \rho.
 \end{equation*}
@@ -67,7 +67,7 @@ G &= \frac 1{p(0)} = \sum_{n=0}^{c-1} \frac{(c\rho)^n}{n!} + \frac{(c\rho)^c}{(1
 \E{\Ls} &= \sum_{n=0}^{\infty}\min\{n,c\} p(n)= \frac{\lambda}\mu.
 \end{align}
 \end{subequations}
-Observe that the expected number of busy servers $\E{\Ls}$ is equal to the load $\lambda \E S=\lambda/\mu$ (and not to $\rho$).
+Observe that the expected number of busy servers $\E{\Ls}$ is equal to $\lambda \E S=\lambda/\mu$ (and not to $\rho$ as in the $M/M/1$ queue).
 
 
 \newthought{The  \recall{$M/M/c/K$} queue} is a multi-server queue with blocking and is a simple generalization of the $M/M/c$ and $M/M/1/K$ queue.
@@ -112,7 +112,7 @@ Then some algebra\sidenote{\cref{ex:l-245}} gives
 \end{align*}
 The last two results are easy.
 As there are as many servers as jobs, jobs cannot be in queue.
-Next, observing that $\lambda(1-p(c))$ is the rate of accepted jobs\sidenote{Since, by PASTA, a fraction $p(c)$ is lost.}, the load is $\lambda(1-p(c))/\mu$, and this in turn is equal to the average number of busy servers.
+Next, observing that $\lambda(1-p(c))$ is the rate of accepted jobs\sidenote{Since, by PASTA, a fraction $p(c)$ is lost.}, the utilization \emph{of the system} is $\lambda(1-p(c))/\mu$, and this in turn is equal to the average number of busy servers.
 
 
 \newthought{The \recall{$M/M/\infty$} queue} is simple to analyze, as is has \emph{ample} servers.

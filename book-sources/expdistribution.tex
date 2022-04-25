@@ -19,7 +19,7 @@ We say that a random variable $X$ is \recall{exponentially distributed} with mea
 \begin{equation*}
  \P{X \leq t} = 1- e^{-\lambda t},
 \end{equation*}
-and then we write $X\sim \Exp(\lambda)$. The following properties hold:\sidenote{~\cref{ex:lambda}--~\cref{ex:11}}
+and then we write $X\sim \Exp{\lambda}$. The following properties hold:\sidenote{~\cref{ex:lambda}--~\cref{ex:11}}
 \begin{subequations}
   \begin{align}
   \E X &= \lambda^{-1},   \label{eq:24}\\
@@ -52,7 +52,7 @@ On these timescales it often turns out that it is reasonable to model inter-arri
 
 
 \newthought{There is a} close link between the Poisson process $N$ and the exponential distribution.
-In fact, a counting process $\{N(t)\}$ is a \emph{Poisson process} with rate $\lambda$ if and only if the inter-arrival times $\{X_k\}$ are iid and $X_{k} \sim \Exp(\lambda)$.\sidenote{~\cref{ex:l-212}--\cref{ex:l-213}.}
+In fact, a counting process $\{N(t)\}$ is a \emph{Poisson process} with rate $\lambda$ if and only if the inter-arrival times $\{X_k\}$ are iid and $X_{k} \sim \Exp{\lambda}$.\sidenote{~\cref{ex:l-212}--\cref{ex:l-213}.}
 
 
 Thus, if you find it reasonable to model inter-arrival times as memoryless, then the number of arrivals in an interval is necessarily Poisson distributed.
@@ -92,7 +92,7 @@ Hence, $\E X = \lambda\, 1!/\lambda^2$.
 
 \begin{exercise}\label{ex:15}
  If \marginpar{A useful intermediate step to compute the variance.}
- $X\sim\Exp(\lambda)$, show that $\E{X^2} = \frac{2}{\lambda^2}$.
+ $X\sim\Exp{\lambda}$, show that $\E{X^2} = \frac{2}{\lambda^2}$.
 \begin{hint}
 Use~\cref{ex:lambda}.
 \end{hint}
@@ -148,7 +148,7 @@ Show~\cref{eq:27}.
 \end{exercise}
 
 \begin{exercise}\label{ex:l-214}
-If $X\sim \Exp(\lambda)$, show that $X$ is memoryless.
+If $X\sim \Exp{\lambda}$, show that $X$ is memoryless.
 \begin{hint}
 Simplify $\P{X>t+h\given X>t}$ with $\P{A\given B} = \P{AB}/\P{B}$.
 \end{hint}
@@ -164,7 +164,7 @@ By the definition of conditional probability
 \end{exercise}
 
 \begin{exercise}\label{ex:l-212}
- If \marginpar{Poisson $\implies$ Exponential.} $N_\lambda$ is a Poisson process with rate $\lambda$, show that the time $X_1$ to the first arriving job is $\Exp(\lambda$).
+ If \marginpar{Poisson $\implies$ Exponential.} $N_\lambda$ is a Poisson process with rate $\lambda$, show that the time $X_1$ to the first arriving job is $\Exp{\lambda}$.
 \begin{hint}
 $N(t)= 0 \iff X_1 > t$.
 \end{hint}
@@ -174,7 +174,7 @@ $\P{X_1> t} = \P{N(t) = 0} = e^{-\lambda t}$.
 \end{exercise}
 
 \begin{exercise}\label{ex:30}
- Assume \marginpar{In this and the next exercises we show that exponential $\implies$ Poisson.} that inter-arrival times $\{X_i\}$ are iid and $\sim\Exp(\lambda)$. Let
+ Assume \marginpar{In this and the next exercises we show that exponential $\implies$ Poisson.} that inter-arrival times $\{X_i\}$ are iid and $\sim\Exp{\lambda}$. Let
 the arrival time of the $i$th job be $A_i=\sum_{k=1}^i X_k$. Show that
 $\E{A_i} = i/\lambda$.
 \begin{hint}
@@ -232,7 +232,7 @@ As a check,
 \begin{exercise}\label{ex:l-213}
  If \marginpar{Continuation of~\cref{ex:54}.}
  the inter-arrival times $\{X_i\}$ are iid
- $\sim \Exp(\lambda)$, prove that the number $N(t)$ of arrivals during the interval $[0,t]$ is Poisson distributed.
+ $\sim \Exp{(\lambda}$, prove that the number $N(t)$ of arrivals during the interval $[0,t]$ is Poisson distributed.
 \begin{hint}
  $\P{N(t)=k} = \P{A_k \leq t} - \P{A_{k+1} \leq t}$.
 \end{hint}
@@ -250,8 +250,8 @@ With  the density of $A_{k+1}$ and applying partial integration,
 
 
 \begin{exercise}\label{ex:10}
- If \marginpar{This result can be anticipated when you think about merging Poisson processes.} $X\sim\Exp(\lambda), S\sim\Exp(\mu)$ and
- independent, show that $Z=\min\{X,S\}\sim\Exp(\lambda+\mu)$,
+ If \marginpar{This result can be anticipated when you think about merging Poisson processes.} $X\sim\Exp{\lambda}, S\sim\Exp{\mu}$ and
+ independent, show that $Z=\min\{X,S\}\sim\Exp{\lambda+\mu}$,
 hence $\E Z = (\lambda+\mu)^{-1}$.
 \begin{hint}
 $\min\{X, S\}>x \iff X>x \, \& \, S> x$.
