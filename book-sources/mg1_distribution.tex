@@ -9,73 +9,80 @@
 
 
 
-In~\cref{sec:batch-arrivals} we used level-crossing arguments to find a recursive for the stationary distribution $\pi(n)$ of the $M^X/M/1$ queue.
-Here we find a similar recursion to compute $\pi(n)$ of $M/G/1$ queue.
+In~\cref{sec:batch-arrivals} we used level-crossing arguments to find a recursion for the stationary distribution $\pi(n)$ of the $M^X/M/1$ queue.
+Here we find a similar recursion to compute $\pi(n)$ for the  $M/G/1$ queue.
 However, we cannot simply copy the ideas of~\cref{sec:batch-arrivals} to the present situation, because in the $M^X/M/1$ queue the service times of the items are exponential, hence memoryless, while in the $M/G/1$ this is not the case.
 
 
 
 
 \newthought{If we want} to characterize the state at all moments in time, we need to keep track of the number of jobs in the system \emph{and} the remaining service time of the job in service (if any), because service times are not memoryless.
-But, by sampling at job departure times $\{D_k\}$,\sidenote{So that the remaining service time is guaranteed to be $0$} we can restrict the state description to just the number in the system.
-We say that the system is in state $n$ at time $D_k$ when $\L(D_k)=n$.\sidenote{Not $\L(D_k-)$.}
+But, by sampling at job departure times $\{D_k\}$,\sidenote{So that the remaining service time is guaranteed to be $0$} we can restrict the state description to just the number in the system. For ease we write $L_k=L(D_{k})$ for the number of jobs in the system left behind at the departure epoch of the $k$th job.\sidenote{not $\L(D_k-)$}
 
-Let $Y_k$ denote the number of arrivals during the service time of job~$k$.
-Note that, because the service times are iid, $\{Y_k\}$ is a sequence of iid random variables.
-Let $Y$ be the common random variable with (pmf) $f(j) = \P{Y = j}$ and $G$ as survivor function.
-
-
-
-\newthought{Let us concentrate} on the down-crossing rate of level $n$.\sidenote{Recall that level $n$ lies between states $n$ and $n+1$.}
-Suppose we start the service of job $k$ when the system is in state $n+1$.\sidenote{Thus, $\L(D_{k-1}) = n+1$.}
-When $Y_k=0$, the system contains one job less
-after the departure of job $k$,\sidenote{Namely, job $k$ left.} that is, $\L(D_k) = n$.
-However, if $Y_k\geq 1$,  $\L(D_k) \geq  n +1$.
-Consequently, a down-crossing of level $n$ can only occur at time $D_k$ when $\L(D_{k-1}=n+1)$ \emph{and} $Y_k = 0$.
-It follows that the number of down-crossings up to time $t$ is
+We now find a useful recursion for $\{L_k\}$. Assume first that $L_{k-1}>0$.\sidenote{This implies that $A_k<D_{k-1}$.} If no new jobs arrive during the service $S_{k}$ of job $k$, then $L_{k}=L_{k-1}-1$. In general, if $Y_{k}$ jobs arrive while job $k$ is served, then $L_k=L_{k-1}-1 + Y_{k}$. The situation is slightly more complicated when $L_{k-1}=0$. We then wait for job $k$ to arrive, and if $Y_k=0$, job $k$ also leaves an empty system behind. Otherwise $L_k=Y_{k}$.  Summarizing,
 \begin{equation*}
- D(n+1, 0, t)  = \sum_{k=1}^{D(t)}\1{\L(D_{k-1})=n+1}\1{Y_k=0}.
+L_k=[L_{k-1}-1]^+ + Y_{k}.
 \end{equation*}
 
+\newthought{With this recursion} it's simple to find the level-crossing equations. Write $\delta_k(n) := \P{L_k=n}$, and,
+as $\{Y_k\}$ is a sequence of iid rvs, let $Y$ be the common random variable with (pmf) $f(j) = \P{Y = j}$ and $G$ as survivor function.
 
-\newthought{For the up-crossings} of level $n$, assume first that the system is in state $m$, $0<m \leq n$, when the service of job $k$ starts.\sidenote{i.e., $\L(D_{k-1})=m$.}
-When $Y_k=1$, it must be that $\L(D_k)=m$ because job $k$ left but one new job arrived in the meantime; thus, level $n$ is \emph{not} crossed.
-In fact, level $n$ can only be up-crossed when $Y_k > n-m + 1$. Thus,
-\begin{equation*}
-D(m, n, t)  = \sum_{k=1}^{D(t)}\1{\L(D_{k-1})=m}\1{Y_k > n-m+1}
-\end{equation*}
-counts the number of up-crossings of level $n$ for $m, 0< m \leq n$.
-
-When the system is in state $\L(D_{k-1}) = 0$, there is a slight subtlety.
-We must first wait for job~$k$ to arrive\sidenote{But, as this is an arrival epoch, it is not captured by a change in the system state.}
-because job $k-1$ left an empty system behind.\sidenote{~\cref{ex:17}--\cref{ex:46}}
-Once it arrived, $\L(D_k)=0$ when $Y_k=0$, $\L(D_k) = 1$ when $Y_k=1$, and so on.
-Therefore,
-\begin{equation*}
-D(0, n, t)  = \sum_{k=1}^{D(t)}\1{\L(D_{k-1})=0}\1{Y_k > n}
-\end{equation*}
-counts the number of up-crossings of that occur when $m=0$.
+If $L_{k}$ down-crosses level $n$, then $L_{k-1}=n+1$, cf., \cref{fig:mg1_2} for an example for level $n=3$.
+Hence, the probability to down-cross level at time $D_{k}$ is $\delta_{k-1}(n+1) f_{0}$; recall that $Y_{k}$  and $L_{k-1}$ are independent by assumption for the $M/G/1$ queue. To  up-cross level $n$, it's necessary that $L_{k-1}\leq n$ and $L_k>n$.  The probability to up-cross is then $\sum_{m=1}^{n} \delta_{k-1}(m) G(n+1-m) + \delta_{k-1}(0) G(n)$.\sidenote{Beware  off-by-one errors; Check!}
 
 
 
-\newthought{By level-crossing} we have that
-\begin{equation*}
-D(n+1,0, t) =  D(0, n, t) + \sum_{m=1}^n D(m,n, t) \text{ $\pm 1$  at most.}
-\end{equation*}
-Let us divide by $t$ and take the limit $t\to\infty$.  Using~\cref{eq:102}, we get
-\begin{equation*}
-  \frac{D(m,n,t)}{t} =
- \frac{D(t)}{t}
-\frac{D(m,t)}{D(t)}
-  \frac{D(m,n,t)}{D(m,t)}, \quad 0\leq m \leq n.
-\end{equation*}
-As before, $D(t)/t\to \delta$ and $D(m,t)/D(t)\to \delta(m)$.
-Then, by a reasoning similar to~\cref{sec:batch-arrivals}, $D(m,n,t)/D(m,t) \to G(n-m+1)$ for $0<m\leq n$, and $D(0,n,t)/D(0,t) \to G(n)$.
-Noting that $\pi(m) = \delta(m)$, see~\cref{eq:39}, and dividing by $\delta$,  we arrive at  a recursion for $\{\pi(n)\}$:
+% \newthought{Let us concentrate} on the down-crossing rate of level $n$.\sidenote{Recall that level $n$ lies between states $n$ and $n+1$.}
+% Suppose we start the service of job $k$ when the system is in state $n+1$.\sidenote{Thus, $\L(D_{k-1}) = n+1$.}
+% When $Y_k=0$, the system contains one job less
+% after the departure of job $k$,\sidenote{Namely, job $k$ left.} that is, $\L(D_k) = n$.
+% However, if $Y_k\geq 1$,  $\L(D_k) \geq  n +1$.
+% Consequently, a down-crossing of level $n$ can only occur at time $D_k$ when $\L(D_{k-1}=n+1)$ \emph{and} $Y_k = 0$.
+% It follows that the number of down-crossings up to time $t$ is
+% \begin{equation*}
+%  D(n+1, 0, t)  = \sum_{k=1}^{D(t)}\1{\L(D_{k-1})=n+1}\1{Y_k=0}.
+% \end{equation*}
+
+
+% \newthought{For the up-crossings} of level $n$, assume first that the system is in state $m$, $0<m \leq n$, when the service of job $k$ starts.\sidenote{i.e., $\L(D_{k-1})=m$.}
+% When $Y_k=1$, it must be that $\L(D_k)=m$ because job $k$ left but one new job arrived in the meantime; thus, level $n$ is \emph{not} crossed.
+% In fact, level $n$ can only be up-crossed when $Y_k > n-m + 1$. Thus,
+% \begin{equation*}
+% D(m, n, t)  = \sum_{k=1}^{D(t)}\1{\L(D_{k-1})=m}\1{Y_k > n-m+1}
+% \end{equation*}
+% counts the number of up-crossings of level $n$ for $m, 0< m \leq n$.
+
+% When the system is in state $\L(D_{k-1}) = 0$, there is a slight subtlety.
+% We must first wait for job~$k$ to arrive\sidenote{But, as this is an arrival epoch, it is not captured by a change in the system state.}
+% because job $k-1$ left an empty system behind.\sidenote{~\cref{ex:17}--\cref{ex:46}}
+% Once it arrived, $\L(D_k)=0$ when $Y_k=0$, $\L(D_k) = 1$ when $Y_k=1$, and so on.
+% Therefore,
+% \begin{equation*}
+% D(0, n, t)  = \sum_{k=1}^{D(t)}\1{\L(D_{k-1})=0}\1{Y_k > n}
+% \end{equation*}
+% counts the number of up-crossings of that occur when $m=0$.
+
+
+
+% \newthought{By level-crossing} we have that
+% \begin{equation*}
+% D(n+1,0, t) =  D(0, n, t) + \sum_{m=1}^n D(m,n, t) \text{ $\pm 1$  at most.}
+% \end{equation*}
+% Let us divide by $t$ and take the limit $t\to\infty$.  Using~\cref{eq:102}, we get
+% \begin{equation*}
+%   \frac{D(m,n,t)}{t} =
+%  \frac{D(t)}{t}
+% \frac{D(m,t)}{D(t)}
+%   \frac{D(m,n,t)}{D(m,t)}, \quad 0\leq m \leq n.
+% \end{equation*}
+% As before, $D(t)/t\to \delta$ and $D(m,t)/D(t)\to \delta(m)$.
+% Then, by a reasoning similar to~\cref{sec:batch-arrivals}, $D(m,n,t)/D(m,t) \to G(n-m+1)$ for $0<m\leq n$, and $D(0,n,t)/D(0,t) \to G(n)$.
+
+With some Markov chain theory, which we skip, it's possible to prove that the limit $\delta(n) = \lim_{k\to \infty} \delta_{k}(n)$ exists for all $n$.
+Then, equating the up- and down-crossing probabilities, taking the limit $k\to\infty$ at the LHS and the RHS, and noting that $\pi(n) = \delta(n)$, see~\cref{eq:39}, we arrive at a recursion for $\{\pi(n)\}$:
 \begin{equation}\label{eq:72}
  \pi(n+1) f(0)= \pi(0) G(n) + \sum_{m=1}^{n} \pi(m) G(n+1-m).
 \end{equation}
-\cref{fig:mg1_2} shows an example for level $n=3$.
 
 \begin{figure}[htb]
  \centering
@@ -112,7 +119,11 @@ Noting that $\pi(m) = \delta(m)$, see~\cref{eq:39}, and dividing by $\delta$,  w
 \caption{Level crossing at departure moments.}\label{fig:mg1_2}
 \end{figure}
 
-\newthought{For the evaluation} of the above recursion we can just follow the scheme of~\cref{sec:batch-arrivals}, but there is an important difference, here the $\{f(k)\}$ needs to be computed.
+
+
+
+
+\newthought{For the evaluation} of the above recursion we can just follow the scheme of~\cref{sec:batch-arrivals}, but there is an important difference, here the $\{f(k)\}$ need to be computed.
 
 We use a conditioning argument to find an expression for $\P{Y=j}$.
 Since jobs arrive as a Poisson process, $Y|S \sim P(\lambda S)$; hence,

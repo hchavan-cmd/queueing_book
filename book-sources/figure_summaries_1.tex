@@ -56,12 +56,12 @@ Here is, in graphical form, an overview to show the relation between the concept
 edge[pil,bend right=25, <-] (lambda.east)
 edge[pil,bend left=25, <-] (mu.east);
 
- \node[block, below=1cm of ES, fill=red!50 ] (W_k) {$W_{k}=\max\{\W_{k-1} - X_k,0\} +S_k$};
+ \node[block, below=1cm of ES, fill=red!50 ] (W_k) {$J_{k}=\max\{J_{k-1} - X_k,0\} +S_k$};
  %edge[pil, bend left=45,<-] (X_k)
  %edge[pil, bend right=55,<-] (S_k.west);
  \draw[->] (S_k.west) [out=180, in=110] to (W_k.north west);
  \draw[->] (X_k.west) [out=230, in=110] to (W_k.north west);
- \node[block, right=1cm of W_k, fill=red!50 ] (D_k) {$D_{k}=A_k + W_{k}$}
+ \node[block, right=1cm of W_k, fill=red!50 ] (D_k) {$D_{k}=A_k + J_{k}$}
  edge[pil,bend right=25, <-] (A_k)
  edge[pil,<-] (W_k);
  \node[block, right=1cm of D_k ] (D_t) {$D(t)=\max\{k: D_k\leq t\}$}

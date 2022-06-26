@@ -14,9 +14,10 @@
 
 I received some very useful feedback during the tutorials. I will certainly implement them. (And students of later years will unknowingly benefit.)
 
-- Include testcases in the programming part of the exam. This is done for this year already.
 - The load of the assignments was too high. (The  assignments of the previous year were too simple, hence I expanded them, but overdid a bit :-).) I received this feedback halfway assignment 4, so I left that unchanged. However, I already reduced the load of assignments 5 and 6. I hope this these are reasonable now.  As action point: I will look for some good way to reduce the load of assignments 1 to 4, but keep the structure.
 - The current form of the assignments helps with reading and thinking about computer code, but it doesn't help to get  started with developing your own code.  (In previous years I did not give code, with the consequence that students simply did not even attempt to program.) As a suggestion, I keep the code in assignments 1 and 2 as is, (but reduce the load of course). Then, for  assignments 3--6, I do not provide the code for simple programming tasks. My idea is to put this code in the solutions at the end of the assignments, so that after developing your code you can check against mine.
+- Let student read reports of each other and let them give feedback on these reports.
+- Make indivual assignments
 
 Further comments  are more than welcome of course: =n.d.van.foreest@rug.nl=.
 
@@ -24,22 +25,3 @@ Further comments  are more than welcome of course: =n.d.van.foreest@rug.nl=.
 * Typos and changes
 
 Here is a list of things I changed in the files during the course. (I don't mention very simple typos, like spelling errors).
-- <2022-02-13 zo>: section 3.2: recursion for $L_k$ repaired, rewrite of some text (but no extra material).
-- <2022-02-13 zo>: assignment 1: formula for $\rho$ repaired.
-- <2022-02-13 zo>:  merged all assignments into one master document with the name =assignments.pdf=.
-- <2022-02-14 ma> preliminaries: added some explanation why I (and many probability books) write $\d F(x)$ instead of $f(x) \d x$. I changed the notation from $F(\d x)$ to $\d F(x)$, because that is perhaps clearer, but notationally it means the same thing.
-- <2022-02-14 ma>: Reformulation of ex 2.1.4  to prevent a potential misreading.
-- <2022-02-14 ma>: reformulation of ex 2.1.8 to ensure that level 0 can be really hit. To improve your understanding, I inserted a new problem 2.1.9.
-- <2022-02-15 di>: assignment dates repaired. See the course outline.
-- <2022-02-17 do>: assignment 1: I simplified the questions about the hitting times, and ask to include a graph.
-- <2022-02-23 wo> assignment 2 (psychiatrists): added a line to =computeQExtra=.
-- <2022-02-24 do>: section 4.3 of the queueing book: I simplified the derivations a bit, but nothing serious. The old reasonings were just as good, but perhaps a bit too short.
-- <2022-03-01 di>: Section 4.4 of queueing book: I added a derivation with Eve's law. If you are not interested, just skip it. However, the derivation is quite a bit faster (but a bit more advanced on conditional expectation).
-- <2022-03-01 di>: repaired code for exercise 4.3.7 of the assignments.
-- <2022-03-02 wo>: repaired code for section 3.5.2 of the assignments. Exercise 3.5.3 has been removed; I put in dummy text to keep the numbering of the other exercises the same.
-- <2022-03-08 di>: a few textual changes in the sections on Little's law and the $M(n)/M(n)/1$ queue. Nothing new, just some reformulations.
-- <2022-03-10 do>: just some reformulations to improve the readability of some paragraphs.
-- <2022-03-14 ma>: irrelevant typo's.
-- <2022-03-22 di>: Section 7.2: Derivation of $U(q)$ simplified
-- <2022-03-22 di>: section 3.3: load, utilization and rho specified.
-- <2022-03-23 wo>: repaired E Ls for the M/M/c queueu

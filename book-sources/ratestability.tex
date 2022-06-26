@@ -102,7 +102,7 @@ Finally, for ease we write
 \end{equation*}
 
 When the system is stable (so that $\lambda=\delta$) the utilization, load and $\rho$ are all equal, and we will use these terms interchangably.
-However, when jobs are rejected, or when customers leave the queue before being served, the arrival rate $$\lambda$ is larger than the departure rate $\delta$, and then we have to be careful about the difference between load and utilization.
+However, when jobs are rejected, or when customers leave the queue before being served, the arrival rate $\lambda$ is larger than the departure rate $\delta$, and then we have to be careful about the difference between load and utilization.
 Note that the load can exceed 1, while the utilization is necessarily at most.
 
 It is easy to check  with a simulation of the $G/G/1$ queue that $L(t)$ increases at rate $\lambda-\mu$ when $\lambda > \mu$, while $L(t) \approx L(0) + (\lambda - \mu)t$ when $\lambda< \mu$ and $L(0)$ large, until the system is empty.\sidenote{It turns out that, when $\E X = \E S$ but $\V{X-S} > 0$, the queue length process behaves in a very peculiar way.
